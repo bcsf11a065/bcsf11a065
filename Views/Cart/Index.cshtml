@@ -1,0 +1,79 @@
+﻿@model List<TermProjectEad.Models. Cart>
+
+@{
+    ViewBag.Title = "products";
+}
+
+ <div class="main">
+    <div class="content">
+    	<div class="content_top">
+    		<div class="heading">
+    		<h3>Your Cart</h3>
+    		</div>
+    		
+    	
+    	
+    		<div class="clear"></div>
+    	</div>
+	      <div class="section group">
+
+  <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;margin:0px auto;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
+.tg .tg-n7bi{font-weight:bold;font-family:"Arial Black", Gadget, sans-serif !important;}
+.tg .tg-bvw0{font-weight:bold;font-family:"Arial Black", Gadget, sans-serif !important;;text-align:center}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-n7bi">ID</th>
+    <th class="tg-bvw0">PID</th>
+    <th class="tg-bvw0">Quantity</th>
+    <th class="tg-bvw0">Price</th>
+    <th class="tg-bvw0">Options</th>
+    <th class="tg-n7bi">Total</th>
+  </tr>
+  
+  
+
+                    @foreach(var s in Model)
+                    {
+				
+                        <tr>
+                            <td class="tg-031e">@s.Id</td>
+                            <td class="tg-031e">@s.PID</td>
+                            <td class="tg-031e">@s.quantity</td>
+                            <td class="tg-031e">@s.totalprice</td>
+                            <td class="tg-031e">
+                                <a href="/Cart/EditMe/@s.Id" >EDIT </a> <p>   </p>
+                                <a href ="/Cart/Delete/@s.Id">Delete</a>
+
+
+                            </td>
+                            <td class="tg-031e"></td>
+                          </tr>
+                    
+				
+					
+                    }
+                   
+                  
+  <tr>
+    <td class="tg-031e"></td>
+    <td class="tg-031e"></td>
+    <td class="tg-031e"></td>
+    <td class="tg-031e"></td>
+    <td class="tg-031e"></td>
+    <td class="tg-031e">500</td>
+  </tr>
+</table>          
+			
+                
+            </div>  
+			</div>
+			
+			
+    </div>
+ </div>
+
+   

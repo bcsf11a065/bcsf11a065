@@ -1,0 +1,34 @@
+﻿@model TermProjectEad.Models. Cart
+
+@{
+    ViewBag.Title = "products";
+}
+
+ <div class="main">
+    <div class="content">
+    	<div class="content_top">
+    		<div class="heading">
+    		<h3>Edit Your Cart</h3>
+    		</div>
+    		
+    	
+    	
+    		<div class="clear"></div>
+    	</div>
+	      <div class="section group">
+              <form action="/Cart/Edit/@Model.Id" method="post">
+                 <h1>
+                     Quantity:
+                 </h1>
+              <input type="text" name="quantity" value="@Model.quantity" />
+                  <input type="submit" value="EDIT" />
+			</form>
+                
+            </div>  
+			</div>
+			
+			
+    </div>
+ </div>
+
+   
