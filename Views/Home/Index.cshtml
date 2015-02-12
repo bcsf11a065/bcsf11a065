@@ -1,0 +1,118 @@
+﻿@model List<TermProjectEad.Models.Product>
+
+@{
+    ViewBag.Title = "products";
+}
+<script type="text/javascript" src="~/Scripts/jquery.fancybox.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.fancybox.pack.js"></script>
+
+<script type="text/javascript" src="~/Scripts/jquery.fancybox-buttons.js"></script>
+<link rel="stylesheet" href="~/Content/jquery.fancybox-buttons.css" type="text/css" media="screen" />
+
+<script type="text/javascript" src="~/Scripts/jquery.fancybox-thumbs.js"></script>
+<link rel="stylesheet" href="~/Content/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
+
+<script type="text/javascript" src="~/Scripts/jquery.fancybox-media.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.mousewheel-3.0.6.pack.js"></script>
+<link rel="stylesheet" href="~/Content/jquery.fancybox.css" type="text/css" media="screen" />
+
+<script>
+    $(document).ready(function () {
+
+        $("#single_image").fancybox();
+
+    });
+</script>
+	<div class="header_bottom">
+		<div class="header_bottom_left">
+			<div class="section group">
+				<div class="listview_1_of_2 images_1_of_2">
+					<div class="listimg listimg_2_of_1">
+						 <a  id="single_image" href="~/Images/pic4.png"> <img src="~/Images/pic4.png" alt="" /></a>
+					</div>
+				    <div class="text list_2_of_1">
+						<h2>Iphone</h2>
+						<p>Lorem ipsum dolor sit amet sed do eiusmod.</p>
+						<div class="button"><span><a href="#">Add to cart</a></span></div>
+				   </div>
+			   </div>			
+				<div class="listview_1_of_2 images_1_of_2">
+					<div class="listimg listimg_2_of_1">
+						  <a id="single_image" href="~/Images/pic3.png"><img src="~/Images/pic3.png" alt="" / ></a>
+					</div>
+					<div class="text list_2_of_1">
+						  <h2>Sansung</h2>
+						  <p>Lorem ipsum dolor sit amet, sed do eiusmod.</p>
+						  <div class="button"><span><a href="#">Add to cart</a></span></div>
+					</div>
+				</div>
+			</div>
+			<div class="section group">
+				<div class="listview_1_of_2 images_1_of_2">
+					<div class="listimg listimg_2_of_1">
+						 <a id="single_image" href="~/Images/pic3.jpg"> <img src="~/Images/pic3.jpg" alt="" /></a>
+					</div>
+				    <div class="text list_2_of_1">
+						<h2>Acer</h2>
+						<p>Lorem ipsum dolor sit amet, sed do eiusmod.</p>
+						<div class="button"><span><a href="#">Add to cart</a></span></div>
+				   </div>
+			   </div>			
+				<div class="listview_1_of_2 images_1_of_2">
+					<div class="listimg listimg_2_of_1">
+						  <a id="single_image" href="~/Images/pic1.png"><img src="~/Images/pic1.png" alt="" /></a>
+					</div>
+					<div class="text list_2_of_1">
+						  <h2>Canon</h2>
+						  <p>Lorem ipsum dolor sit amet, sed do eiusmod.</p>
+						  <div class="button"><span><a href="#">Add to cart</a></span></div>
+					</div>
+				</div>
+			</div>
+		  <div class="clear"></div>
+		</div>
+			 <div class="header_bottom_right_images">
+		     	<div id="slideshow">
+	<ul class="slides">
+    	<li><a id="single_image" href="~/Images/1.jpg"><img src="~/Images/1.jpg" alt="Marsa Alam underawter close up" height="342px" /></a></li>
+        <li><a id="single_image" href="~/Images/2.jpg"><img src="~/Images/2.jpg" alt="Turrimetta Beach - Dawn" height="342px"/></a></li>
+        <li><a id="single_image" href="~/Images/3.jpg"><img src="~/Images/3.jpg" alt="Power Station" height="342px"/></a></li>
+        <li><a id="single_image" href="~/Images/4.jpg"><img src="~/Images/4.jpg" alt="Colors of Nature" height="342px"/></a></li>
+    </ul>
+		    <span class="arrow previous"></span>
+		    <span class="arrow next"></span>
+		  </div>
+	    </div>
+	  <div class="clear"></div>
+  </div>	
+ <div class="main">
+    <div class="content">
+    	<div class="content_top">
+    		<div class="heading">
+    		<h3>Feature Products</h3>
+    		</div>
+    		
+    	
+    	
+    		<div class="clear"></div>
+    	</div>
+	      <div class="section group">
+
+				 @foreach(var s in Model)
+              {
+				<div class="grid_1_of_4 images_1_of_4">
+					 <a id="single_image" href="~/Images/@s.image"><img src="~/Images/@s.image" alt="" /></a>
+					 <h2>@s.name </h2>
+					 <p>@s.details</p>
+					 <p><span class="strike">@s.oldprice</span><span class="price">@s.newprice</span></p>
+					  <div class="button"><span><img src="~/Images/cart.jpg" alt="" /><a href="/Cart/AddToCart/@s.Id" class="cart-button">Buy It</a></span> </div>
+				     <div class="button"><span><a href="#" class="details">Details</a></span></div>
+				</div>
+              }
+			</div>
+			
+			
+    </div>
+ </div>
+
+  
